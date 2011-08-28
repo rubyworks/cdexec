@@ -1,0 +1,5 @@
+--title "CdExec"
+--readme README.rdoc
+--private
+lib/**/*.rb -
+[A-Z]*.*

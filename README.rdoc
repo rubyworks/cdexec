@@ -12,7 +12,7 @@ Execute command from within a selection of directories.
 
 == Usage
 
-The dash character `-`) is used to separate the directory selection
+A dash (`-`) is used to separate the directory selection
 from the command to be executed.
 
 For example, to list all files in all subdirectories:

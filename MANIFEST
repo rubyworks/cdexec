@@ -4,3 +4,4 @@ bin/cdexec
 lib/cdexec.rb
 HISTORY.rdoc
 README.rdoc
+COPYING.rdoc
