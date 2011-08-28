@@ -6,11 +6,11 @@ ignore 'pkg', 'site'
 
 trip 'release' do
   exit -1 if !system('detroit release')  # `detroit release`
-  `pom news | git tag -a -F - #{version}`  
+  system "pom news | git tag -a -F - #{version}"  
 end
 
 file 'ruby.yml' do
-  `dotruby`
+  system "dotruby"
 end
 
 file 'MANIFEST' do
@@ -18,7 +18,7 @@ file 'MANIFEST' do
 end
 
 file 'lib/**/*' do
-   exit -1 if !system('detroit test')
+  exit -1 if !system('detroit test')
   update_manifest
 end
 
@@ -28,6 +28,6 @@ end
 # end
 
 def update_manifest
-  @manifest_updated ||= `mast -u`
+  @manifest_updated ||= system "mast -u"
 end
 

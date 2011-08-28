@@ -1,0 +1,6 @@
+#!mast .ruby bin lib [A-Z]*.*
+.ruby
+bin/cdexec
+lib/cdexec.rb
+HISTORY.rdoc
+README.rdoc

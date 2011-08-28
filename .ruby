@@ -8,7 +8,9 @@ conflicts: []
 requirements: []
 dependencies: []
 repositories: []
-resources: {}
+resources:
+  home: http://rubyworks.github.com/cdexec
+  code: http://github.com/rubyworks/cdexec
 load_path:
 - lib
 extra: {}
