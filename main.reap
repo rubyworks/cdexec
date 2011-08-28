@@ -1,0 +1,33 @@
+#!/usr/bin/env ruby
+
+# TODO: Do things in ruby instead of shelling out!
+
+ignore 'pkg', 'site'
+
+trip 'release' do
+  exit -1 if !system('detroit release')  # `detroit release`
+  `pom news | git tag -a -F - #{version}`  
+end
+
+file 'ruby.yml' do
+  `dotruby`
+end
+
+file 'MANIFEST' do
+  update_manifest
+end
+
+file 'lib/**/*' do
+   exit -1 if !system('detroit test')
+  update_manifest
+end
+
+# Could we incorporate detroit phases?
+# detroit :post_release do
+#   ...
+# end
+
+def update_manifest
+  @manifest_updated ||= `mast -u`
+end
+

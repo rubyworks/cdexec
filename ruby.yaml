@@ -1,0 +1,13 @@
+---
+name    : cdexe
+title   : cdexe
+version : 0.1.0
+summary : Multi-execute over directories
+
+description:
+  Execute shell commands in multiple-subdirectories.
+
+authors:
+  - Thomas Sawyer <transfire@gmail.com>
+
+source: ruby.yaml
