@@ -1,2 +1,36 @@
-= CDEXE
+= CdExec
 
+{Homepage}[http://rubyworks.github.com/cdexec] |
+{Development}[http://github.com/rubyworks/cdexec] |
+{Support}[http://github.com/rubyworks/cdexec/issues]
+
+
+== Description
+
+Execute command from within a selection of directories.
+
+
+== Usage
+
+The dash character `-`) is used to separate the directory selection
+from the command to be executed.
+
+For example, to list all files in all subdirectories:
+
+  $ cdexec * - ls -1
+
+The `*` selects all the subdirectories. The `ls -1` command following the `-`
+is run within each directory, resulting in a complete list of files.
+
+More interesting result when used with source control systems, e.g.
+
+  $ cdexec * - reap
+
+
+== Copying
+
+(BSD-2-Clause)
+
+Copyright (c) 2011 Thomas Sawyer, Rubyworks
+
+See COPYING.rdoc for details.
