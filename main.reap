@@ -4,7 +4,8 @@
 
 ignore 'pkg', 'site'
 
-trip 'release' do
+desc "Release package."
+task 'release' do
   exit -1 if !system('detroit release')  # `detroit release`
   system "pom news | git tag -a -F - #{version}"  
 end

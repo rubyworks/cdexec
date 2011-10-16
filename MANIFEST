@@ -1,7 +1,11 @@
-#!mast .ruby bin lib [A-Z]*.*
+#!mast .yardopts .ruby bin lib man [A-Z]*.*
+.yardopts
 .ruby
 bin/cdexec
 lib/cdexec.rb
+man/cdexe.1
+man/cdexe.1.html
+man/cdexe.1.ronn
 HISTORY.rdoc
 README.rdoc
 COPYING.rdoc

@@ -1,0 +1,47 @@
+cdexec(1) - Iterate command execution over multiple directories
+===============================================================
+
+## DESCRIPTION
+
+The `cdexec` command allows shell commands to be executed over a selection
+of file directories. This is convenient for working with mutliple projects
+in bulk.
+
+## OPTIONS
+
+The `cdexec` command is quite simple to use and there are only a few options:
+
+  * `-t`/`--trace`
+    Display the name of each directory as it is changed into.
+
+  * `-h`/`--help` 
+    Show this help message.
+
+## EXAMPLES
+
+There are plenty of uses for gitexec. Here are examples of a few that
+have proven handy to the developers of cdexec.
+
+Check the git status of a set of projects.
+
+  $ cdexec */ - git status
+
+Running spellcheck on multiple project READMEs.
+
+  $ cdexec */ - aspell check README.rdoc
+  $ cdexec */ - rm README.rdoc.bak
+
+Running tests on multiple projects.
+
+  $ cdexec */ - rake test
+
+All of these example relate to software development. No doubt there
+are many other application.
+
+## COPYING
+
+Copyright (c) 2011 Thomas Sawyer, Rubyworks
+
+This program is distributable in accordance to the terms of the 
+*FreeBSD* license.
+
