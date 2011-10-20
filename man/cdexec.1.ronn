@@ -7,6 +7,7 @@ The `cdexec` command allows shell commands to be executed over a selection
 of file directories. This is convenient for working with mutliple projects
 in bulk.
 
+
 ## OPTIONS
 
 The `cdexec` command is quite simple to use and there are only a few options:
@@ -16,6 +17,7 @@ The `cdexec` command is quite simple to use and there are only a few options:
 
   * `-h`/`--help` 
     Show this help message.
+
 
 ## EXAMPLES
 
@@ -38,10 +40,18 @@ Running tests on multiple projects.
 All of these example relate to software development. No doubt there
 are many other application.
 
+
+## RESOURCES
+
+  * [API Documentation](http://rubydoc.info/gems/cdexec/frames)
+  * [Issue Tracker](http://github.com/rubyworks/cdexec/issues)
+  * [Source Code](http://github.com/rubyworks/cdexec)
+
+
 ## COPYING
 
 Copyright (c) 2011 Thomas Sawyer, Rubyworks
 
-This program is distributable in accordance to the terms of the 
+This program is distributable in accordance with the terms of the 
 *FreeBSD* license.
 
