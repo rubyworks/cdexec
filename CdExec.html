@@ -106,7 +106,102 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Command line interface.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#command_line-class_method" title="command_line (class method)">+ (Object) <strong>command_line</strong>(*args) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Glue the command line together, adding double quotes if argument contains
+spaces.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#display_help-class_method" title="display_help (class method)">+ (Object) <strong>display_help</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Display help message and exit.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#man_file-class_method" title="man_file (class method)">+ (Object) <strong>man_file</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Path to roff man-page file.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ronn_file-class_method" title="ronn_file (class method)">+ (Object) <strong>ronn_file</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Path to ronn man-page file.</p>
+</div></span>
   
 </li>
 
@@ -127,14 +222,23 @@
   
 
   
-</p><table class="source_code">
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Command line interface.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-4
-5
 6
 7
 8
@@ -151,10 +255,15 @@
 19
 20
 21
-22</pre>
+22
+23
+24
+25
+26
+27</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/cdexec.rb', line 4</span>
+      <pre class="code"><span class="info file"># File 'lib/cdexec.rb', line 6</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id cli'>cli</span><span class='lparen'>(</span><span class='op'>*</span><span class='id argv'>argv</span><span class='rparen'>)</span>
   <span class='kw'>case</span> <span class='id i'>i</span> <span class='op'>=</span> <span class='id argv'>argv</span><span class='period'>.</span><span class='id index'>index</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>-</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
@@ -164,16 +273,192 @@
     <span class='id dirs'>dirs</span><span class='comma'>,</span> <span class='id args'>args</span> <span class='op'>=</span> <span class='id argv'>argv</span><span class='lbracket'>[</span><span class='int'>0</span><span class='op'>...</span><span class='id i'>i</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id argv'>argv</span><span class='lbracket'>[</span><span class='id i'>i</span><span class='op'>+</span><span class='int'>1</span><span class='op'>..</span><span class='op'>-</span><span class='int'>1</span><span class='rbracket'>]</span>
   <span class='kw'>end</span>
 
-  <span class='id trace'>trace</span> <span class='op'>=</span> <span class='id dirs'>dirs</span><span class='period'>.</span><span class='id delete'>delete</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>-t</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='id help'>help</span>   <span class='op'>=</span> <span class='id dirs'>dirs</span><span class='period'>.</span><span class='id delete'>delete</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>-h</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span> <span class='op'>||</span> <span class='id dirs'>dirs</span><span class='period'>.</span><span class='id delete'>delete</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>--help</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='id trace'>trace</span>  <span class='op'>=</span> <span class='id dirs'>dirs</span><span class='period'>.</span><span class='id delete'>delete</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>-t</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span> <span class='op'>||</span> <span class='id dirs'>dirs</span><span class='period'>.</span><span class='id delete'>delete</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>--trace</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+
+  <span class='id display_help'>display_help</span> <span class='kw'>if</span> <span class='id help'>help</span>
 
   <span class='id dirs'>dirs</span> <span class='op'>=</span> <span class='id dirs'>dirs</span><span class='period'>.</span><span class='id select'>select</span><span class='lbrace'>{</span> <span class='op'>|</span><span class='id dir'>dir</span><span class='op'>|</span> <span class='const'>File</span><span class='period'>.</span><span class='id directory?'>directory?</span><span class='lparen'>(</span><span class='id dir'>dir</span><span class='rparen'>)</span> <span class='rbrace'>}</span>
 
-  <span class='id dirs'>dirs</span><span class='period'>.</span><span class='id each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id dir'>dir</span><span class='op'>|</span>
-    <span class='id puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>cd </span><span class='embexpr_beg'>#{</span><span class='id dir'>dir</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>if</span> <span class='id trace'>trace</span>
+  <span class='id dirs'>dirs</span><span class='period'>.</span><span class='id each_with_index'>each_with_index</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id dir'>dir</span><span class='comma'>,</span> <span class='id idx'>idx</span><span class='op'>|</span>
+    <span class='id puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='embexpr_beg'>#{</span><span class='id idx'>idx</span><span class='op'>+</span><span class='int'>1</span><span class='rbrace'>}</span><span class='tstring_content'>. </span><span class='embexpr_beg'>#{</span><span class='id dir'>dir</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>if</span> <span class='id trace'>trace</span>
     <span class='const'>Dir</span><span class='period'>.</span><span class='id chdir'>chdir</span> <span class='id dir'>dir</span> <span class='kw'>do</span>
-      <span class='id system'>system</span> <span class='op'>*</span><span class='id args'>args</span>
+      <span class='id system'>system</span> <span class='id command_line'>command_line</span><span class='lparen'>(</span><span class='op'>*</span><span class='id args'>args</span><span class='rparen'>)</span>
     <span class='kw'>end</span>
   <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="command_line-class_method">
+  
+    + (<tt>Object</tt>) <strong>command_line</strong>(*args) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Glue the command line together, adding double quotes if argument contains
+spaces.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/cdexec.rb', line 31</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id command_line'>command_line</span><span class='lparen'>(</span><span class='op'>*</span><span class='id args'>args</span><span class='rparen'>)</span>
+  <span class='id args'>args</span><span class='period'>.</span><span class='id map'>map</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id a'>a</span><span class='op'>|</span>
+    <span class='kw'>case</span> <span class='id a'>a</span>
+    <span class='kw'>when</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\s</span><span class='regexp_end'>/</span></span>
+      <span class='tstring'><span class='tstring_beg'>%{</span><span class='tstring_content'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id a'>a</span><span class='rbrace'>}</span><span class='tstring_content'>&quot;</span><span class='tstring_end'>}</span></span>
+    <span class='kw'>else</span>
+      <span class='id a'>a</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span><span class='period'>.</span><span class='id join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'> </span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="display_help-class_method">
+  
+    + (<tt>Object</tt>) <strong>display_help</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Display help message and exit.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+43
+44
+45
+46</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/cdexec.rb', line 43</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id display_help'>display_help</span>
+  <span class='id system'>system</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>man </span><span class='embexpr_beg'>#{</span><span class='id man_file'>man_file</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span> <span class='op'>||</span> <span class='id puts'>puts</span><span class='lparen'>(</span><span class='const'>File</span><span class='period'>.</span><span class='id read'>read</span><span class='lparen'>(</span><span class='id ronn_file'>ronn_file</span><span class='rparen'>)</span><span class='rparen'>)</span>
+  <span class='id exit'>exit</span> <span class='int'>0</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="man_file-class_method">
+  
+    + (<tt>Object</tt>) <strong>man_file</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Path to roff man-page file.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+49
+50
+51</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/cdexec.rb', line 49</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id man_file'>man_file</span>
+  <span class='const'>File</span><span class='period'>.</span><span class='id dirname'>dirname</span><span class='lparen'>(</span><span class='kw'>__FILE__</span><span class='rparen'>)</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>/../man/cdexe.1</span><span class='tstring_end'>'</span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="ronn_file-class_method">
+  
+    + (<tt>Object</tt>) <strong>ronn_file</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Path to ronn man-page file.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+54
+55
+56</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/cdexec.rb', line 54</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id ronn_file'>ronn_file</span>
+  <span class='const'>File</span><span class='period'>.</span><span class='id dirname'>dirname</span><span class='lparen'>(</span><span class='kw'>__FILE__</span><span class='rparen'>)</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>/../man/cdexe.1.ronn</span><span class='tstring_end'>'</span></span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -185,9 +470,9 @@
 </div>
     
     <div id="footer">
-  Generated on Sun Aug 28 13:50:06 2011 by 
+  Generated on Thu Oct 20 00:16:23 2011 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.7.2 (ruby-1.9.3).
+  0.7.3 (ruby-1.9.3).
 </div>
 
   </body>
