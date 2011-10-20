@@ -1,5 +1,13 @@
 = RELEASE HISTORY
 
+== 0.2.1 / 2011-10-20
+
+Fixed type of man-page name. That's it.
+
+Changes:
+
+* Fixed name of man-page.
+
 
 == 0.2.0 / 2011-10-19
 

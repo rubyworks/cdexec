@@ -5,7 +5,11 @@ authors:
 copyrights: []
 replacements: []
 conflicts: []
-requirements: []
+requirements:
+- name: detroit
+  groups:
+  - build
+  development: true
 dependencies: []
 repositories: []
 resources:
@@ -16,7 +20,7 @@ load_path:
 extra: {}
 name: cdexec
 title: cdexec
-version: 0.2.0
+version: 0.2.1
 summary: Multi-execute over directories
 description: Execute shell commands in multiple-subdirectories.
 source:

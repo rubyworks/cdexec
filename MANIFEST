@@ -3,9 +3,9 @@
 .ruby
 bin/cdexec
 lib/cdexec.rb
-man/cdexe.1
-man/cdexe.1.html
-man/cdexe.1.ronn
+man/cdexec.1
+man/cdexec.1.html
+man/cdexec.1.ronn
 HISTORY.rdoc
 README.rdoc
 COPYING.rdoc
