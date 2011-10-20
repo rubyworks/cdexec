@@ -1,7 +1,7 @@
 ---
-version : 0.1.0
-name    : cdexe
-title   : cdexe
+version : 0.2.0
+name    : cdexec
+title   : cdexec
 summary : Multi-execute over directories
 
 description:

@@ -14,13 +14,13 @@ resources:
 load_path:
 - lib
 extra: {}
-name: cdexe
-title: cdexe
-version: 0.1.0
+name: cdexec
+title: cdexec
+version: 0.2.0
 summary: Multi-execute over directories
 description: Execute shell commands in multiple-subdirectories.
 source:
 - ruby.yaml
 revision: 0
 alternatives: []
-date: '2011-08-28'
+date: '2011-10-20'

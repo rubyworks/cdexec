@@ -1,6 +1,18 @@
 = RELEASE HISTORY
 
-== 2011-08-27
+
+== 0.2.0 / 2011-10-19
+
+The release fixes glob exapansion in the command portion
+of a cdexec call.
+
+Changes:
+
+* Fix glob expansion of command.
+* Better handling of arguments that contain spaces.
+
+
+== 0.1.0 / 2011-08-27
 
 Initial release of CdExec. Have fun!
 
