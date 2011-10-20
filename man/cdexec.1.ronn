@@ -26,16 +26,16 @@ have proven handy to the developers of cdexec.
 
 Check the git status of a set of projects.
 
-  $ cdexec */ - git status
+    $ cdexec */ - git status
 
 Running spellcheck on multiple project READMEs.
 
-  $ cdexec */ - aspell check README.rdoc
-  $ cdexec */ - rm README.rdoc.bak
+    $ cdexec */ - aspell check README.rdoc
+    $ cdexec */ - rm README.rdoc.bak
 
 Running tests on multiple projects.
 
-  $ cdexec */ - rake test
+    $ cdexec */ - rake test
 
 All of these example relate to software development. No doubt there
 are many other application.
