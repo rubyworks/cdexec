@@ -1,7 +1,5 @@
 ---
 email:
-  file    : ~
-  subject : ~
   mailto  :
     - ruby-talk@ruby-lang.org
     - rubyworks-mailinglist@googlegroups.com
@@ -15,6 +13,7 @@ github:
 yard:
   yardopts: true
   priority: 2
+  active: false
 
 #minitest:
 #  tests    : spec/*_spec.rb
