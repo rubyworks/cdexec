@@ -1,30 +1,38 @@
 ---
+source:
+- ruby.yaml
+- var
 authors:
 - name: Thomas Sawyer
   email: transfire@gmail.com
-copyrights: []
+copyrights:
+- holder: Rubyworks
+  year: '2011'
+  license: BSD-2-Clause
 replacements: []
-conflicts: []
+alternatives: []
 requirements:
 - name: detroit
   groups:
   - build
   development: true
 dependencies: []
-repositories: []
+conflicts: []
+repositories:
+- uri: git://github.com/rubyworks/cdexec.git
+  scm: git
+  name: upstream
 resources:
   home: http://rubyworks.github.com/cdexec
   code: http://github.com/rubyworks/cdexec
+extra: {}
 load_path:
 - lib
-extra: {}
-name: cdexec
+revision: 0
+summary: Multi-execute over directories
 title: cdexec
 version: 0.2.1
-summary: Multi-execute over directories
+name: cdexec
 description: Execute shell commands in multiple-subdirectories.
-source:
-- ruby.yaml
-revision: 0
-alternatives: []
-date: '2011-10-20'
+organization: Rubyworks
+date: '2011-11-11'

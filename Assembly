@@ -1,30 +1,19 @@
 ---
-email:
-  mailto  :
-    - ruby-talk@ruby-lang.org
-    - rubyworks-mailinglist@googlegroups.com
-
 gem:
   active: true
 
 github:
-  active: true
+  gh_pages: web
 
 yard:
   yardopts: true
   priority: 2
   active: false
 
-#minitest:
-#  tests    : spec/*_spec.rb
-#  loadpath : lib
-#  requires : ~
-#  active   : false
-
 dnote:
-  service : DNote
-  labels  : ~
-  output  : log/DNOTE.rdoc
+  title: Developer's Notes
+  labels: ~
+  output: log/DNOTE.rdoc
 
 #locat:
 #  title    : ~
@@ -34,6 +23,13 @@ dnote:
 #  active   : true
 
 vclog:
-  output : log/ChangeLog.rdoc
-  active : false
+  output:
+    - log/changes.html
+    - log/history.html
+
+email:
+  mailto:
+    - ruby-talk@ruby-lang.org
+    - rubyworks-mailinglist@googlegroups.com
+
 
